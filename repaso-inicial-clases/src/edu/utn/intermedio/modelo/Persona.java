@@ -5,7 +5,6 @@ import java.time.LocalDate;
 public abstract class Persona {
 	
 	private String nombre;
-	private String identificacion;
 	private int anioNacimiento;
 	
 	public int getAnioNacimiento() {
@@ -21,10 +20,7 @@ public abstract class Persona {
 		this.nombre = nombre;
 	}
 	public String getIdentificacion() {
-		return identificacion;
-	}
-	public void setIdentificacion(String identificacion) {
-		this.identificacion = identificacion;
+		return this.nombre;
 	}
 	
 	public abstract void presentarse();
