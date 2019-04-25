@@ -1,6 +1,7 @@
 package edu.utn.intermedio.modelo;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public abstract class Persona {
 	
