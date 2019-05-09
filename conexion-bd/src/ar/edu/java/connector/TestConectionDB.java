@@ -22,7 +22,7 @@ public class TestConectionDB {
 
 		try {
 			connection = DriverManager
-			.getConnection("jdbc:mysql://localhost:3306/java?useLegacyDatetimeCode=false&serverTimezone=UTC","javaintermedio", "java1234");
+			.getConnection("jdbc:mysql://localhost:3306/java?useLegacyDatetimeCode=false&serverTimezone=UTC","javaintermedio", "JavaIntermedio@1234");
 
 		} catch (SQLException e) {
 			System.out.println("Fallo la conexion!! Mirar la consola con el resultado");
@@ -39,5 +39,4 @@ public class TestConectionDB {
 		
 		
 	}
-
 }
