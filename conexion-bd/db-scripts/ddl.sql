@@ -6,3 +6,5 @@ CREATE TABLE `java`.`usuarios` (
   PRIMARY KEY (`idusuarios`))
 ENGINE = InnoDB
 COMMENT = 'Tabla de usuarios';
+
+CREATE TABLE `java`.`auto` ( `id` INT NOT NULL AUTO_INCREMENT , `color` VARCHAR(45) NOT NULL , `modelo` VARCHAR(45) NOT NULL , `marca` VARCHAR(45) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
