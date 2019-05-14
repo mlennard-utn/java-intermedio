@@ -7,6 +7,10 @@ public class MainConnectorDB {
 	public static void main(String[] args) {
 		MySQLConnectorDAO dao = new MySQLConnectorDAO();
 		
+		
+		dao.agregarAuto("VW", "Gol", "fucsia");
+		
+		
 		dao.getAutos();
 		
 	}

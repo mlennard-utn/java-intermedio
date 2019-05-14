@@ -1,6 +1,7 @@
 package ar.edu.java.connector.dao;
 
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,7 @@ public class MySQLConnectorDAO {
 		try {
 			Statement st = (Statement) getConnection().createStatement();
 			ResultSet rs = st.executeQuery("select * from auto");
-			while (rs.next()) {
+			while (rs.next()) {	
 				System.out.println("VEHICULO N " + rs.getInt("id"));
 				System.out.println(rs.getString("marca"));
 				System.out.println(rs.getString("modelo"));
@@ -44,6 +45,26 @@ public class MySQLConnectorDAO {
 		System.out.println("Termine!");
 	}
 
+	public boolean agregarAuto(String marca, String modelo, String color) {
+		try {
+			String insertQuery = "insert into auto(marca,modelo,color) values(?,?,?)";
+			PreparedStatement ps = getConnection().prepareStatement(insertQuery);
+			ps.setString(1, marca);
+			ps.setString(2, modelo);
+			ps.setString(3, color);
+						
+			return ps.execute();
+
+		} catch (Exception e) {
+
+			System.out.println(e.getMessage());
+			return false;
+		}
+	}
+
+	
+	
+	
 	public boolean insertAuto(String marca, String modelo, String color) {
 		try {
 			Statement st = (Statement) getConnection().createStatement();
