@@ -1,7 +1,10 @@
 package hello.dao;
 
+import org.springframework.stereotype.Repository;
+
 import hello.model.PreguntaRespuesta;
 
+@Repository
 public class PreguntaldosMemoryDAO implements PreguntaldosDAO {
 
 	@Override
@@ -24,8 +27,11 @@ public class PreguntaldosMemoryDAO implements PreguntaldosDAO {
 
 	@Override
 	public PreguntaRespuesta getPreguntaRespuesta(Integer id) {
-		
-		return null;
+		PreguntaRespuesta pr = new PreguntaRespuesta();
+		pr.setId(id);
+		pr.setPregunta("Como se llama?");
+		pr.setRespuesta("Ud sabe");
+		return pr;
 	}
 
 }

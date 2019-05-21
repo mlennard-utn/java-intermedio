@@ -1,14 +1,19 @@
 package hello.service;
 
-import hello.dao.PreguntaldosDAO;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import hello.dao.PreguntaldosMemoryDAO;
 import hello.model.PreguntaRespuesta;
 
+@Service
 public class PreguntaldosServiceImpl implements PreguntaldosService {
 
+	@Autowired
+	PreguntaldosMemoryDAO dao;
+	
 	@Override
 	public String getPregunta(Integer id) {
-		PreguntaldosDAO dao = new PreguntaldosMemoryDAO();
 		PreguntaRespuesta pr = dao.getPreguntaRespuesta(id);
 		
 		return pr.getPregunta();
@@ -16,32 +21,33 @@ public class PreguntaldosServiceImpl implements PreguntaldosService {
 
 	@Override
 	public String getRespuesta(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		PreguntaRespuesta pr = dao.getPreguntaRespuesta(id);
+		
+		return pr.getRespuesta();
 	}
 
 	@Override
 	public PreguntaRespuesta getPreguntaRespuesta(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		PreguntaRespuesta pr = dao.getPreguntaRespuesta(id);
+		
+		return pr;
 	}
 
 	@Override
 	public Boolean addPreguntaRespuesta(PreguntaRespuesta pr) {
-		// TODO Auto-generated method stub
-		return null;
+		Integer insert = dao.insertPreguntaRespuesta(pr);
+		
+		return insert != null;
 	}
 
 	@Override
 	public Boolean removePreguntaRespuesta(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.deletePreguntaRespuesta(id);
 	}
 
 	@Override
 	public Boolean updatePreguntaRespuesta(Integer id, PreguntaRespuesta pr) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.updatePreguntaRespuesta(pr);
 	}
 	
 }

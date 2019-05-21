@@ -1,7 +1,10 @@
 package hello.service;
 
+import org.springframework.stereotype.Service;
+
 import hello.model.PreguntaRespuesta;
 
+@Service
 public interface PreguntaldosService {
 	public String getPregunta(Integer id);
 	public String getRespuesta(Integer id);
