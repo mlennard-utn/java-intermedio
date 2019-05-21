@@ -35,20 +35,19 @@ public class PreguntaldosServiceImpl implements PreguntaldosService {
 
 	@Override
 	public Boolean addPreguntaRespuesta(PreguntaRespuesta pr) {
-		// TODO Auto-generated method stub
-		return null;
+		Integer insert = dao.insertPreguntaRespuesta(pr);
+		
+		return insert != null;
 	}
 
 	@Override
 	public Boolean removePreguntaRespuesta(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.deletePreguntaRespuesta(id);
 	}
 
 	@Override
 	public Boolean updatePreguntaRespuesta(Integer id, PreguntaRespuesta pr) {
-		// TODO Auto-generated method stub
-		return null;
+		return dao.updatePreguntaRespuesta(pr);
 	}
 	
 }
