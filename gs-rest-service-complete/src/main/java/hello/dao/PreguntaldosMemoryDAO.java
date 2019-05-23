@@ -1,5 +1,7 @@
 package hello.dao;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 import org.springframework.stereotype.Repository;
 
 import hello.model.PreguntaRespuesta;
@@ -9,20 +11,18 @@ public class PreguntaldosMemoryDAO implements PreguntaldosDAO {
 
 	@Override
 	public Integer insertPreguntaRespuesta(PreguntaRespuesta pr) {
-		// TODO Auto-generated method stub
-		return null;
+		AtomicLong counter = new AtomicLong();
+		return (int)counter.getAndIncrement();
 	}
 
 	@Override
 	public Boolean deletePreguntaRespuesta(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		return Boolean.FALSE;
 	}
 
 	@Override
 	public Boolean updatePreguntaRespuesta(PreguntaRespuesta pr) {
-		// TODO Auto-generated method stub
-		return null;
+		return Boolean.TRUE;
 	}
 
 	@Override

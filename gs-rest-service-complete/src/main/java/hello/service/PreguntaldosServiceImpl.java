@@ -47,7 +47,21 @@ public class PreguntaldosServiceImpl implements PreguntaldosService {
 
 	@Override
 	public Boolean updatePreguntaRespuesta(Integer id, PreguntaRespuesta pr) {
-		return dao.updatePreguntaRespuesta(pr);
+		PreguntaRespuesta anterior = dao.getPreguntaRespuesta(id);
+		anterior.setPregunta(pr.getPregunta());
+		anterior.setRespuesta(pr.getRespuesta());
+		
+		return dao.updatePreguntaRespuesta(anterior);
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 }
